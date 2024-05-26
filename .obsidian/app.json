@@ -1,0 +1,16 @@
+{
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "livePreview": false,
+  "attachmentFolderPath": "./attachments",
+  "strictLineBreaks": false,
+  "autoPairBrackets": false,
+  "autoPairMarkdown": false,
+  "spellcheck": false,
+  "useTab": false
+}

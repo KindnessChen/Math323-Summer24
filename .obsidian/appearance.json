@@ -1,0 +1,10 @@
+{
+  "accentColor": "",
+  "theme": "moonstone",
+  "baseFontSize": 17,
+  "enabledCssSnippets": [
+    "my_callouts",
+    "callouts"
+  ],
+  "cssTheme": "Typewriter"
+}
