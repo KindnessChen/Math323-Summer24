@@ -1,6 +1,6 @@
 A quick recap of the dot product
 >[!t] Dot product properties
->(Let $V$ be a (finite?) dimensional vector space over $\mathbb{R}$. Then the inner product, also called the *dot product*, $\cdot: V \times V \to \mathbb{R}$ is a function such that:)
+>(Let $V$ be a vector space over $\mathbb{R}$. Then the inner product, also called the *dot product*, $\cdot: V \times V \to \mathbb{R}$ is a function such that:)
 >1. $\vec{u}\cdot(\vec{v_{1}}+\vec{v_{2}}) = \vec{u}\cdot\vec{v_{1}}+\vec{u}\cdot\vec{v_{2}}$
 >2. $\vec{u} \cdot (\alpha \vec{v}) = \alpha \vec{u} \cdot  \vec{v}$
 >3. $\vec{u} \cdot \vec{v} = \vec{v} \cdot \vec{u}$
@@ -21,17 +21,17 @@ A quick recap of the dot product
 >
 >These properties establish $Cov$ as a dot product on the vector space of random variables.
 
-$y$-value\ $x$-value | $-1$ | $0$ | $1$ | $p_{Y}(y)$
+>[!e] Example
+>$y$-value\ $x$-value | $-1$ | $0$ | $1$ | $p_{Y}(y)$
 -- | -- | -- | --| --
 $0$ | $\frac{1}{4}$ | $\frac{1}{6}$ | $\frac{1}{12}$ | $\frac{1}{2}$
 $1$ | $\frac{1}{4}$ | $0$ | $\frac{1}{4}$ | $\frac{1}{2}$
-$p_{X}(x)$ | $\frac{1}{2}$ | $\frac{1}{6}$
->[!e] Examples
+$p_{X}(x)$ | $\frac{1}{2}$ | $\frac{1}{6}$ | $\frac{1}{3}$
 >We calculated last time that $\mathbb{E}(XY) = 0$. Furthermore, $\mathbb{E}(X) = -\frac{1}{10}$ and $\mathbb{E}(Y) = \frac{1}{2}$. So $Cov(X , Y) = 0 - \left( -\frac{1}{6} \cdot \frac{1}{2} \right)= \frac{1}{12}$.
 
 >[!e] A continuous example
 >Again the function $$f(x,y) = \begin{cases}  6x \quad 0 < x < y < 1 \\ 0 \quad \text{otherwise}  \end{cases}$$
->![[desmos-graph-8.png]]
+>![[desmos-graph-7.png]]
 >We have $$\mathbb{E}(XY) = \iint_{\mathbb{R}^2}xy f(x,y)\;dA$$
 > $$=\int_{0}^{1} \int_{0}^{y} xy \cdot 6x \, dx  \, dy $$
 > $$\int_{0}^{1} y\int_{0}^{y} 6x^2 \, dx  \, dy $$
@@ -61,8 +61,8 @@ From here we have $$-1 \leq \frac{Cov(X, Y)}{\sqrt{ V(X) } \sqrt{ V(Y) }}\leq 1$
 >[!e] Example
 >Suppose $V(X) = 2$, $V(Y) = 3$, $Cov(X, Y) = -\sqrt{ 6 }$, $\mathbb{E}(X) = 1$, $\mathbb{E}(Y)= 3$. What is the relationship between $X$ and $Y$?
 >We observe that $\rho (X, Y) =\frac{-\sqrt{ 6 }}{\sqrt{ 6 }} = -1$, so $Y  = \alpha X + b$ where $\alpha < 0$. Since $V(Y) = \alpha^2V(X)$, we deduce $\alpha^2 = \frac{3}{2} \implies \alpha = -\sqrt{ \frac{3}{2} }$, and since $\mathbb{E}(Y) = \alpha\mathbb{E}(X) + b$ we deduce $b = 3 + \sqrt{ \frac{3}{2} }$.
-
-Note that if $Cov(X, Y)$ had been $\sqrt{ 8 }$ in the above example, then that would have been impossible because $\sqrt{ 8 } > \sqrt{ 2 } \cdot \sqrt{ 3 }$ which violates Cauchy-Schwartz.
+>>[!r] Remark
+>>Note that if $Cov(X, Y)$ had been $\sqrt{ 8 }$ in the above example, then the scenario would have been impossible because $\sqrt{ 8 } > \sqrt{ 2 } \cdot \sqrt{ 3 }$ which violates Cauchy-Schwartz.
 Also, if $\rho(X, Y)\neq \pm 1$, we have insufficient information.
 
 >[!d] Definition
@@ -89,13 +89,12 @@ If $p + q = \frac{1}{4}$ we get a joint probability distribution. $\mathbb{E}(XY
 >Suppose $X, Y, W$ are independent, $X \sim N(0,2)$, $Y\sim \chi^2(p=3)$, $W \sim Exponential(3)$.
 >Let us calculate $V(2X + 3Y - W)$:
 > $$=4V(X) + 9V(Y) + V(W) +\cancel{  12Cov(X, Y) } \cancel{ - 4Cov(X, CW) } \cancel{ -6 Cov(Y, W) }$$
+> $$=4 \cdot 2 + 9 \cdot 6 + 9$$
 
 
 
 >[!t] Big long formula for taking covariance
-> $$Cov\left( \sum_{ i = 1 } ^{ n } \alpha_{i}X_{i}, \sum_{ j = 1 } ^{ m } \beta_{i}Y_{i} \right) = $$
-
-something
+> $$Cov\left( \sum_{ i = 1 } ^{ n } \alpha_{i}X_{i}, \sum_{ j = 1 } ^{ m } \beta_{i}Y_{i} \right) = \sum_{ i = 1 } ^{ n } \sum_{ j = 1 } ^{ m } \alpha_{i}\beta_{i}Cov(X_{i},Y_{i})$$
 
 
 ---
@@ -112,7 +111,7 @@ But what if we have more than 2 outcomes?
 >Calculating $P(X_{1} = 1, X_{2} = 3, X_{3} = 6)$:
 > $$={10 \brack {1,3,6 } } \left( \frac{1}{2} \right)^{1}\left( \frac{1}{3} \right)^{3}\left( \frac{1}{6} \right)^6$$
 
->[!d] Definition Multinomial distribution
+>[!d] Definition: Multinomial distribution
 >Assume that a random experiment has outcomes $w_{1}, w_{2}, \dots, w_k$ with constant probability $p_{1}, p_{2}, \dots, p_k$. Repeat the experiment $N$ times, and let $X_{i}$ be the number of times $w_{i}$ occurred. Let the trials be independent. Then $X_{1}, X_{2}, \dots, X_k$ are said to have a (joint) multinomial distribution with parameters $N, p_{1}, p_{2}, \dots, p_k$.
 
 >[!t] Properties of the multinomial distribution

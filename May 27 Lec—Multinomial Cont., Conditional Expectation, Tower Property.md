@@ -73,7 +73,8 @@ $p_{X}(x)$ | $\frac{1}{2}$ | $\frac{1}{6}$ | $\frac{1}{3}$
 
 >[!e] Continuous example 
 > $$f(x,y) = \begin{cases}  6x \quad 0 < x < y < 1 \\ 0 \quad \text{otherwise}  \end{cases}$$
-> We said many times that $X\sim Beta(2,2)$, $Y \sim Beta(3,1)$. Also, given $X =x$ we have $Y \sim U(x,1)$ and given $Y = y$ we ahve $X \sim Y \cdot Beta(2,1)$.
+> ![[desmos-graph-7.png]]
+> We said many times that $X\sim Beta(2,2)$, $Y \sim Beta(3,1)$. Also, given $X =x$ we have $Y \sim U(x,1)$ and given $Y = y$ we found that $X \sim Y \cdot Beta(2,1)$.
 > 
 > Computing $\mathbb{E}(Y | X) =: g(X)$:
 > $g(X) = \mathbb{E}(Y | X = x) = \frac{1+ x}{2}$ since $Y \sim U(x, 1)$
@@ -96,6 +97,8 @@ $p_{X}(x)$ | $\frac{1}{2}$ | $\frac{1}{6}$ | $\frac{1}{3}$
 > 4. **Tower Property:** $\mathbb{E}(\mathbb{E}(F(Y)| X)) = \mathbb{E}(F(Y))$
 >
 >>[!p] Proof
+>>1 and 2 should be straightforward enough.
+>>
 >> 4. Let $G(x) := \mathbb{E}(F(Y) | X)$; we want to compute $$\int_{-\infty}^{\infty} G(X)f_{X}(x) \, dx $$
 >> We have
 >> $$G(X)=\int_{-\infty}^{\infty} F(y)f(y | X = x)  \, dy $$
@@ -106,7 +109,7 @@ $p_{X}(x)$ | $\frac{1}{2}$ | $\frac{1}{6}$ | $\frac{1}{3}$
 >> $$=\int_{-\infty}^{\infty} F(y)f_{Y}(y) \, dy $$
 >> $$=\mathbb{E}(F(y))$$
 >>3. Assume $X, Y$ are independent.
->> $$\mathbb{E}(F(Y) | X = x)  = \int_{-\infty}^{\infty} F(y) \underbrace{ f(y|X= x)  }_{ f_{Y}(y) \; \text{by independence} }\, dy $$
+>> $$\mathbb{E}(F(Y) | X = x)  = \int_{-\infty}^{\infty} F(y) \underbrace{ f(y|X= x)  }_{= f_{Y}(y) \; \text{by independence} }\, dy $$
 >> $$=\mathbb{E}(F(y))$$
 
 We can view $\mathbb{E}(Y | X)$ as the orthogonal projection of $Y$ on the space of the functions of $X$.
@@ -114,9 +117,11 @@ We can view $\mathbb{E}(Y | X)$ as the orthogonal projection of $Y$ on the space
 >[!t] Proposition
 >$Y - \mathbb{E}(Y | X)$ is uncorrelated with every function of $X$.
 >>[!p] Proof
->>We want to show that $Cor(Y - \mathbb{E}(Y | X), H(X)) = 0$ for every $H(x)$.
+>>We want to show that $Cov(Y - \mathbb{E}(Y | X), H(X)) = 0$ for every $H(x)$.
 >>We know by the Tower Property $\mathbb{E}(Y - \mathbb{E}(Y | X)) = 0$
->> We have $$Cor(Y - \mathbb{E}(Y | X), H(X)) = \mathbb{E}(Y H(X) - \mathbb{E}(Y | X)H(X)$$
+>> We have $$Cov(Y - \mathbb{E}(Y | X), H(X)) = \mathbb{E}(Y H(X) - \mathbb{E}(Y | X)H(X)$$
+>> $$Cov(Y - \mathbb{E}(Y | X), H(X)) = \mathbb{E}((Y-\mathbb{E}(Y|X)) \cdot H(X)) - \cancel{ \mathbb{E}(Y - \mathbb{E}(Y|X)) \cdot \mathbb{E}(H(X)) }$$
+>> 
 
 
 
@@ -150,5 +155,5 @@ We can view $\mathbb{E}(Y | X)$ as the orthogonal projection of $Y$ on the space
 > So (drum rolls!!!)$$X_{1} \sim P(\lambda p)$$
 
 
->[!a] Aside
+>[!a] Aside: a special challenge
 >Prove that $X_{2}$ and $X_{1}$ are independent in the above example.

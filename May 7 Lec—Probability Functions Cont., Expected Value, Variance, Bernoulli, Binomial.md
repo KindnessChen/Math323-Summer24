@@ -146,3 +146,4 @@ $$p_{X}(k) = C_{k}^N p^k(1-p)^{N-k}$$
 > > By the binomial theorem, $$=Np [p+(1-p)]^{N-1}$$
 > > Since $p+(1-p) = 1$,
 > > $$\mathbb{E}(X)= Np$$
+> 

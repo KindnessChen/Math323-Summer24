@@ -1,4 +1,4 @@
-#### Beta distributions
+ #### Beta distributions
 Note that the **beta integral ** 
 $$\int_{0}^{1} x^{\alpha-1}(1-x)^{\beta-1} \, dx = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha + \beta)}$$
 
@@ -33,7 +33,7 @@ is a beta integral with $\alpha = 3, \beta = 4$. The integral is equal to $\frac
 
 ---
 #### Moment generating functions of pdfs
-You know full well that this is just the Laplace transform of the pdf!
+(For those of you who have taken ODEs, you will see that this is just the Laplace transform of the pdf.)
 >[!d] Definition: Moment generating function of a pdf
 >For a pdf $f_{X}$,
 > $$m_{X}(t) = \mathbb{E}(e^{tx})$$
@@ -62,7 +62,7 @@ $$=\begin{cases}  1 \quad t = 0 \\  \frac{e^{at}  \cdot e^{(b-a)t} - 1}{(b-a)t} 
 
 ##### Normal
 Let $X \sim N(\mu , \sigma^2)$
-so $X = \sigma Z + \mu$ where $Z \sim N(0, 1)$. So $m_{X}(t) = e^{\mu t}m_{Z}(\sigma t)$
+so $X = \sigma Z + \mu$ where $Z \sim N(0, 1)$. So $m_{X}(t) = e^{\mu t}m_{Z}(\sigma t)$, and
 $$m_{Z}(s) = \int_{-\infty}^{\infty} e^{sz}f_{Z}(z) \, dz $$
 $$=\int_{-\infty}^{\infty} e^{sz} \cdot \frac{1}{\sqrt{ 2\pi }} e^{-z^2/2} \, dx $$
 $$=\frac{1}{\sqrt{ 2\pi }} \int_{-\infty}^{\infty} e^{-\frac{1}{2} \cdot [z^2 - 2sz]}  \, dx $$
@@ -73,7 +73,7 @@ Make change of variable $z-s = u$:
 $$=\frac{e^{1/2 \cdot s^2}}{\sqrt{ 2\pi }}\underbrace{  \int_{-\infty}^{\infty} e^{-1/2 u^2} \, du }_{ =1 }$$
 $$=e^{\frac{1}{2}s^2}$$
 
-#### Gamma
+##### Gamma
 $X \sim \Gamma(\alpha, \beta)$
 $$m_{X}(t) = \int_{0}^{\infty} e^{tx}f_{X}(x) \, dx $$
 $$=\frac{1}{\Gamma(\alpha)\beta^\alpha} \int_{0}^{\infty} e^{tx}x^{\alpha-1}e^{\frac{t}{\beta}} \, dx $$

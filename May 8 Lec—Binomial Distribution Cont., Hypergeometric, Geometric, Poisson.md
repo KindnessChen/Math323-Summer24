@@ -120,12 +120,12 @@ $$=(1-p)^{k-1}\cdot p$$
 > 1. $\mathbb{E}(X) = \frac{1}{p}$
 > 2. $V(X) = \frac{1}{p}\left( \frac{1}{p} - 1 \right)$
 >>[!p] Proof
->>Now I finally realize how nice Prof Humphries and Arnab are because I absolutely suck at power series :(
+>>
 >> 1. $$\mathbb{E}(X) = \sum_{ k = 1 } ^{  \infty } k p_{X}(k)$$
 >> $$=\sum_{ k = 1 } ^{  \infty } kp(1-p)^{k-1}$$
 >> $$=p \cdot \left( \sum_{ k = 1 } ^{  \infty } k (1-p)^{k-1} \right)$$
->> From calculus (if you're not a math major but took Calc 3), analysis (if you are a math major and didn't take analysis 2 with Prof Jakobson), or an oracle (if you did neither)
->> For $| x | < 1$ we have
+>> From calculus, analysis, or an oracle:
+>> for $| x | < 1$ we have
 >> $$\sum_{ k = 1 } ^{  \infty } kx^{k-1} = \sum_{ k = 1 } ^{  \infty } \frac{d}{dx}x^k = \frac{d}{dx}\left( \sum_{ k = 1 } ^{  \infty } x^k \right) = \frac{d}{dx} \left( \frac{1}{1-x} \right)=\frac{1}{(1-x)^2}$$
 >> Similarly
 >> (well you should be able to prove this on your own, can't LaTeX quickly enough in class)

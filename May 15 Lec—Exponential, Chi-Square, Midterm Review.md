@@ -27,13 +27,15 @@ Since $P(X > a + b) = P([X > a + b] \cap [X > a])$,
 $$\frac{P([X > a + b] \cap [X > a])}{P(X > a)} = P(X > b)$$
 The right hand side is $P(X > a + b | X > a)$, so we have $$P(X > a + b | X > a) = P(X > b)$$
 which is the famous **memoryless property**.
-Exercise for those that love analysis: It can be prove that any continuous function that satisfies $F(a + b) = F(a) F(b)$ is exponential. So this is the only distribution with this property.
+>[!r] Remark
+>Exercise for those that love analysis: It can be prove that any continuous function that satisfies $F(a + b) = F(a) F(b)$ is exponential. So this is the only distribution with this property.
 
 >[!t] Properties of the exponential distribution
 >1. $\mathbb{E}(X) = \beta$
 >2. $V(X) = \beta^2$
+>
 >>[!p] Proof
->>Obviously elementary from the fact that $X$ is also a gamma pdf.
+>>Obviously elementary from the fact that $X$ also has a gamma pdf.
 
 >[!e] Example
 >Let $X \sim E(\beta)$ with $\mathbb{E}(X) = \beta$. Consider $$Y = \begin{cases}  10 \quad 0 < x < 2 \\
@@ -64,7 +66,7 @@ So $$f_{X}(x) = \begin{cases}  0 \quad x < 0 \\ \frac{1}{\sqrt{ 2\pi }}x^{-1/2}e
 
 We therefore observe that $X \sim G\left( \alpha = \frac{1}{2}, \beta = 2 \right)$
 
-(from here we learn that $\frac{1}{\Gamma\left( \frac{1}{2} \right) \cdot \left( \frac{1}{2} \right)^{1/2}} = \frac{1}{\sqrt{ 2\pi }}$ so $\Gamma\left( \frac{1}{2} \right) = \sqrt{ \pi }$.
+(Aside: From here we learn that $\frac{1}{\Gamma\left( \frac{1}{2} \right) \cdot \left( \frac{1}{2} \right)^{1/2}} = \frac{1}{\sqrt{ 2\pi }}$ so $\Gamma\left( \frac{1}{2} \right) = \sqrt{ \pi }$.)
 
 >[!d] Definition: Chi-square distribution
 >$X$ is said to have a chi-square distribution with $p$ degrees of freedom ($X \sim \chi^2(p)$, $p$ a positive integer) if $X \sim G\left( \alpha = \frac{p}{2}, \beta = 2 \right)$, i.e. the pdf of $X$ is $$f_{X}(x) = \begin{cases}  \frac{1}{\Gamma\left( \frac{p}{2} \right)2^{p/2}}x^{p/2 - 1}e^{-x/2} \quad x > 0 \\ 0 \quad \text{otherwise}  \end{cases}$$
@@ -88,23 +90,21 @@ We therefore observe that $X \sim G\left( \alpha = \frac{1}{2}, \beta = 2 \right
 
 ---
 #### Midterm Review
-Consider the jumbled up REDDDIITT. What is the probability that in any shuffling of the letters the two T's are together?
+1. Consider the jumbled up REDDDIITT. What is the probability that in any shuffling of the letters the two T's are together?
 There are $\frac{9!}{3!2!2!}$ unique placements up to the same letters.
 There are 8 possible positions of the two T's. For the other 7 letters, there are $\frac{7!}{3!2!}$ ways of numbering them up to the same letters. So the probability of this event happening is $$\frac{8 \cdot \frac{7!}{3!2!}}{\frac{9!}{3!2!2!}}$$
 What if we specify that the two T's are together and only two of the three D's are together? (this would be very complicated)
 
-The most probable/most likely outcome is the outcome with the highest probability.
+Side note: The most probable/most likely outcome is the outcome with the highest probability, not the expected value.
+<br>
 
-
-Consider $X$ with mgf $\frac{e^{-2t}}{8} (1 + e^{2t})^3$. What is the distribution of $X$?
+2. Consider $X$ with mgf $\frac{e^{-2t}}{8} (1 + e^{2t})^3$. What is the distribution of $X$?
 $$\frac{e^{-2t}}{8} (1 + e^{2t})^3 = e^{-2t}\left( \frac{1}{2} + \frac{1}{2}e^{2t} \right)^3$$
 $X = -2 + 2Y$ where $Y \sim B\left( 3, \frac{1}{2} \right)$
 
-Let $X \sim B\left( 4, \frac{1}{5} \right)$, $X  =$ number of heads in 4 tosses. If head, triple your current fortune (10). If tail, half your current fortune.
-Let $Y$ be your fortune after the 4 tosses. Find the expected fortune.
+3. Let $X \sim B\left( 4, \frac{1}{5} \right)$, $X  =$ number of heads in 4 tosses. If head, triple your current fortune (10). If tail, half your current fortune. Let $Y$ be your fortune after the 4 tosses. Find the expected fortune.
 $$Y = 10 \cdot 3^X \cdot \left(\frac{1}{2}\right)^{4-X} = \frac{10}{16}\cdot 6^X$$
 $$\mathbb{E}(Y) = \frac{10}{16} \mathbb{E}(6^X) = \frac{10}{16} \mathbb{E}(e^{\ln(6)X}) = \frac{10}{16}m_{X}(\ln(6))$$
 $$=\frac{10}{16}\left( \frac{4}{5} + \frac{1}{5}e^{\ln(6)} \right)^4=10$$
 
-
-Consider the probability function $p_{Y}(n) = (\frac{1}{2})^{n+1}$. It isn't a geometric distribution. But consider $X = Y + 1$. We see that $X \in \{ 1,2,3,\dots \}$ and $P(X = k) = P(Y = k-1)$
+4. Consider the probability function $p_{Y}(n) = (\frac{1}{2})^{n+1}$. It isn't a geometric distribution. But consider $X = Y + 1$. We see that $X \in \{ 1,2,3,\dots \}$ and $P(X = k) = P(Y = k-1)$.
